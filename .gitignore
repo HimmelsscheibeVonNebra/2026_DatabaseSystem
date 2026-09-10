@@ -1,1 +1,30 @@
 .DS_Store
+
+# Private archives and local build artifacts
+/.student_archive/
+/.codex-finalizer/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+*.tsbuildinfo
+
+# Editor locks and temporary files
+*.swp
+*.swo
+*.tmp
+*.log
+.~lock.*#
+~$*
+
+# SQLite runtime files; keep the sample .db files
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+
+# Superseded, unreadable PowerPoint; distribute the final PDF
+/Presentations/week02-02/week02-02_sqlite_lab.pptx

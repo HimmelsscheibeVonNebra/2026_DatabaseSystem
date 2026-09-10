@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 02 / SQLite Lab</title>
+  <style>
+    :root { color-scheme: light; --paper: #f5f2e9; --ink: #233b32; --muted: #637367; --line: #ced4c7; --accent: #bce478; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: radial-gradient(ellipse at top right, #e3ebd4, transparent 65%), var(--paper); font-family: 'Trebuchet MS', sans-serif; }
+    main { max-width: 1120px; margin: auto; padding: 44px 24px 60px; animation: arrive .45s ease-out; }
+    .eyebrow, h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; }
+    .eyebrow { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+    h1 { font: normal clamp(42px, 7vw, 76px)/1.1 Georgia, serif; margin: 28px 0 14px; letter-spacing: -.04em; }
+    p { line-height: 1.6; }
+    .intro { max-width: 680px; color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 24px; margin-top: 32px; }
+    aside, .editor, .result { background: #ffffffa6; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+    aside { align-self: start; }
+    h2 { margin: 0 0 16px; }
+    button, input { font: inherit; }
+    button { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; background: white; color: var(--ink); }
+    button:hover:not(:disabled) { border-color: var(--ink); }
+    button:disabled { cursor: not-allowed; opacity: .45; }
+    button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #79994c; outline-offset: 3px; }
+    #run { background: var(--ink); color: white; border-color: var(--ink); }
+    #reset { background: var(--accent); }
+    input[type=file] { width: 100%; font-size: 12px; margin: 10px 0; }
+    .hint { font-size: 13px; color: var(--muted); }
+    #tables { display: grid; gap: 8px; margin-top: 20px; }
+    #tables button { text-align: left; font-family: monospace; }
+    label { display: block; font-size: 13px; }
+    textarea { display: block; width: 100%; min-height: 230px; resize: vertical; margin: 14px 0; padding: 18px; color: #e4efd9; background: #20372f; border: 0; border-radius: 6px; font: 14px/1.7 'SFMono-Regular', Consolas, monospace; tab-size: 4; }
+    .actions, .examples { display: flex; gap: 8px; flex-wrap: wrap; }
+    .examples { margin-bottom: 18px; }
+    .examples button { font-size: 12px; padding: 7px 10px; }
+    #status { min-height: 24px; font-size: 13px; margin: 18px 0; }
+    #status[data-error=true] { color: #a62d20; }
+    .result { margin-top: 16px; overflow: auto; }
+    .result h3 { font: normal 20px Georgia, serif; margin: 0 0 16px; }
+    table { border-collapse: collapse; width: 100%; font: 13px/1.5 'SFMono-Regular', Consolas, monospace; }
+    th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { background: #eaf0df; }
+    .null { color: var(--muted); font-style: italic; }
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 18px; font-size: 12px; color: var(--muted); }
+    a { color: inherit; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 720px) { main { padding: 24px 16px; } .layout { grid-template-columns: 1fr; } #tables { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (prefers-reduced-motion: reduce) { main { animation: none; } }
+  </style>
+  <!-- Internet access is required to load the pinned SQLite JavaScript/WASM runtime. -->
+  <script defer src="https://cdn.jsdelivr.net/npm/sql.js@1.13.0/dist/sql-wasm.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <main>
+    <div class="eyebrow"><span>Database Systems / Week 02</span><span>Browser Lab</span></div>
+    <h1>A small database.<br>A place to experiment.</h1>
+    <p class="intro">Open your SQLite file, write a query, and explore the results. Everything runs in browser memory. Your original file stays unchanged.</p>
+    <div class="layout">
+      <aside>
+        <h2>Step 1 / Open</h2>
+        <label for="database">Choose <code>Codes/week02-02/test.db</code></label>
+        <input id="database" type="file" accept=".db,.sqlite,.sqlite3" disabled>
+        <p id="file-name" class="hint">No database loaded.</p>
+        <button id="reset" disabled>Reset memory</button>
+        <p class="hint">Reset reloads the selected file's original data. Refreshing the page discards the session.</p>
+        <div id="tables" aria-label="Database tables"></div>
+      </aside>
+      <section>
+        <div class="editor">
+          <h2>Step 2 / Query</h2>
+          <div class="examples" aria-label="Example queries">
+            <button data-example="all" disabled>All students</button>
+            <button data-example="filter" disabled>Filter</button>
+            <button data-example="join" disabled>Join</button>
+            <button data-example="update" disabled>Try an update</button>
+          </div>
+          <label for="sql">SQL editor / Ctrl+Enter or Command+Enter to run</label>
+          <textarea id="sql" spellcheck="false">SELECT * FROM student ORDER BY id;</textarea>
+          <div class="actions"><button id="run" disabled>Run SQL</button></div>
+          <p class="hint">You can paste the Step 1-4 scripts here. UPDATE, DELETE, and Step 4 only change the in-memory copy. Scripts run in order; an error stops execution, but earlier statements may already have run.</p>
+        </div>
+        <p id="status" role="status" aria-live="polite">Loading SQLite...</p>
+        <div id="results" aria-label="Query results"></div>
+      </section>
+    </div>
+    <footer>Step 3 / Compare: open the original test.db in DBeaver and run the same SELECT query. Browser edits will not appear there.<br>Source: <a href="main.ts">main.ts</a> / SQLite runtime: <a href="https://sql.js.org/">sql.js</a>. No server, upload, or database export.</footer>
+  </main>
+</body>
+</html>
