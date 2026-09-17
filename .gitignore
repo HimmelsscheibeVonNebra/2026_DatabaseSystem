@@ -32,3 +32,10 @@ Presentations/week03-01/week3-1-sqlite-practice-v02.odp
 Presentations/week03-01/week3-1-sqlite-practice-v02.pdf
 Presentations/week03-01/week3-1-sqlite-practice-v03.odp
 Presentations/week03-01/week3-1-sqlite-practice-v03.pdf
+
+# Week 3-2 generated databases and parser build outputs
+/Codes/week03-02/app/data/
+/Codes/week03-02/parser-source/data/
+/Codes/week03-02/parser-source/build/
+/Codes/week03-02/parser-source/vendor/sqlite-amalgamation-*/
+/Codes/week03-02/parser-source/vendor/sqlite-src-*/

@@ -1,0 +1,26 @@
+COMMAND: student_lab DB parser syntax
+EXIT CODE: 1
+
+STDOUT
+INPUT: SELECT FROM student;
+parser: [[[SELECT FROM student;]]]
+parser: Input 'SELECT' in state 0
+parser: Shift 'SELECT', go to state 329
+parser: Return. Stack=[SELECT]
+parser: Input 'FROM' in state 329
+parser: Reduce 100 [distinct ::=].
+parser: ... then shift 'distinct', go to state 227
+parser: Reduce 101 [sclp ::=].
+parser: ... then shift 'sclp', go to state 422
+parser: Reduce 30 [scanpt ::=].
+parser: ... then shift 'scanpt', go to state 91
+parser: Syntax Error!
+parser: Return. Stack=[SELECT distinct sclp scanpt]
+parser: Popping scanpt
+parser: Popping sclp
+parser: Popping distinct
+parser: Popping SELECT
+PREPARE rc=1 parameters=0
+
+STDERR
+PREPARE ERROR: near "FROM": syntax error

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>학생 관리 · 3-tier 실습</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main>
+<header><p class="eyebrow">DATABASE LAB / WEEK 3–2</p><h1>학생 관리</h1><p>브라우저에서 요청하고, 서버가 처리하고, 데이터베이스에 저장합니다.</p></header>
+<nav aria-label="3계층 구조"><span><b>01 화면</b> 브라우저</span><span>HTTP / JSON ⇄</span><span><b>02 애플리케이션</b> Python</span><span>SQL / 바인딩 ⇄</span><span><b>03 데이터</b> SQLite</span></nav>
+<p class="note">논리적 3계층 예제입니다. SQLite 엔진은 Python 서버 프로세스 안에서 실행됩니다. <span id="version"></span></p>
+<div class="workspace"><section><h2>학생 등록</h2><form id="add-form">
+<label>학번<input name="id" type="number" min="1" max="2147483647" value="2001" required></label>
+<label>이름<input name="name" value="O'Brien" maxlength="80" required></label>
+<label>학과<select name="dept_name"><option>컴퓨터공학</option><option>수학</option><option>경영학</option><option value="">미정 (NULL)</option></select></label>
+<label>이수 학점<input name="tot_cred" type="number" min="0" max="200" value="12" required></label>
+<button type="submit">학생 등록</button></form>
+<h2>학점 수정·학생 삭제</h2><form id="edit-form"><label>대상 학번<input name="id" id="target-id" type="number" min="1" max="2147483647" value="2001" required></label><label>변경할 학점<input name="tot_cred" type="number" min="0" max="200" value="24" required></label><div class="actions"><button type="submit">학점 수정</button><button type="button" class="secondary" id="delete">학생 삭제</button></div></form></section>
+<section class="list"><div class="section-head"><h2>학생 목록</h2><button class="secondary" id="refresh">전체 조회</button></div><form id="search-form" class="search"><label class="sr-only" for="search-name">이름 정확히 검색</label><input id="search-name" placeholder="이름 정확히 검색" maxlength="80" required><button>검색</button></form><p id="count"></p><div class="table-scroll"><table><thead><tr><th>학번</th><th>이름</th><th>학과</th><th>학점</th></tr></thead><tbody id="students"></tbody></table></div><p class="note">행의 선택 버튼을 누르면 수정·삭제할 학번을 지정합니다. 데이터는 모두 가상입니다.</p></section></div>
+<p id="status" role="status" aria-live="polite">연결 중…</p>
+<section class="observations"><h2>요청과 처리 결과</h2><p>등록·수정·삭제 후 목록은 자동으로 갱신됩니다. 아래에는 방금 수행한 작업의 요청과 응답을 유지합니다.</p><div class="logs"><div><h3>브라우저가 보낸 HTTP 요청</h3><pre id="request">—</pre></div><div><h3>서버의 응답</h3><pre id="response">—</pre></div></div><h3>SQL과 매개변수</h3><pre id="database">요청을 실행하면 SQL과 바인딩 값을 구분해서 표시합니다.</pre><p class="note">SQL 표시 기능은 수업 관찰용입니다. 이 화면은 SQLite 내부 C API 추적을 표시하지 않습니다.</p></section>
+<footer>Week 3–2 · CRUD와 바인딩 실습</footer></main></body></html>

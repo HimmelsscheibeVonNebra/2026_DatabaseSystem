@@ -1,0 +1,2 @@
+# Tokenizer output records literal whitespace tokens in its final column.
+Codes/week03-02/parser-source/examples/tokenizer.txt whitespace=-blank-at-eol

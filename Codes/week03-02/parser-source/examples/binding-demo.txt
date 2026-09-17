@@ -1,0 +1,6 @@
+phase=1
+한글	42
+phase=2
+한글	42
+phase=3
+새 값	NULL

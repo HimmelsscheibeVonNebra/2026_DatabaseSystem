@@ -1,0 +1,90 @@
+COMMAND: student_lab DB parser ok
+EXIT CODE: 0
+
+STDOUT
+INPUT: SELECT name FROM student WHERE id = ?1;
+parser: [[[SELECT name FROM student WHERE id = ?1;]]]
+parser: Input 'SELECT' in state 0
+parser: Shift 'SELECT', go to state 329
+parser: Return. Stack=[SELECT]
+parser: Input 'ID' in state 329
+parser: Reduce 100 [distinct ::=].
+parser: ... then shift 'distinct', go to state 227
+parser: Reduce 101 [sclp ::=].
+parser: ... then shift 'sclp', go to state 422
+parser: Reduce 30 [scanpt ::=].
+parser: ... then shift 'scanpt', go to state 91
+parser: Shift 'ID', go to state 464
+parser: Return. Stack=[SELECT distinct sclp scanpt ID]
+parser: Input 'FROM' in state 464
+parser: Reduce 180 [expr ::= ID|INDEXED|JOIN_KW], pop back to state 91.
+parser: ... then shift 'expr', go to state 22
+parser: Reduce 30 [scanpt ::=].
+parser: ... then shift 'scanpt', go to state 291
+parser: Reduce 106 [as ::=].
+parser: ... then shift 'as', pending reduce 102
+parser: Reduce 102 [selcollist ::= sclp scanpt expr scanpt as], pop back to state 227.
+parser: ... then shift 'selcollist', go to state 328
+parser: Shift 'FROM', go to state 226
+parser: Return. Stack=[SELECT distinct selcollist FROM]
+parser: Input 'ID' in state 226
+parser: Reduce 110 [stl_prefix ::=].
+parser: ... then shift 'stl_prefix', go to state 235
+parser: Shift 'ID', pending reduce 363
+parser: Return. Stack=[SELECT distinct selcollist FROM stl_prefix ID]
+parser: Input 'WHERE' with pending reduce 363
+parser: Reduce 363 [nm ::= ID|INDEXED|JOIN_KW] without external action, pop back to state 235.
+parser: ... then shift 'nm', go to state 389
+parser: Reduce 116 [dbnm ::=].
+parser: ... then shift 'dbnm', go to state 275
+parser: Reduce 106 [as ::=].
+parser: ... then shift 'as', go to state 208
+parser: Reduce 130 [on_using ::=].
+parser: ... then shift 'on_using', pending reduce 111
+parser: Reduce 111 [seltablist ::= stl_prefix nm dbnm as on_using], pop back to state 226.
+parser: ... then shift 'seltablist', go to state 295
+parser: Reduce 108 [from ::= FROM seltablist], pop back to state 328.
+parser: ... then shift 'from', go to state 402
+parser: Shift 'WHERE', go to state 113
+parser: Return. Stack=[SELECT distinct selcollist from WHERE]
+parser: Input 'ID' in state 113
+parser: Shift 'ID', go to state 464
+parser: Return. Stack=[SELECT distinct selcollist from WHERE ID]
+parser: Input 'EQ' in state 464
+parser: Reduce 180 [expr ::= ID|INDEXED|JOIN_KW], pop back to state 113.
+parser: ... then shift 'expr', go to state 77
+parser: Shift 'EQ', go to state 139
+parser: Return. Stack=[SELECT distinct selcollist from WHERE expr EQ]
+parser: Input 'VARIABLE' in state 139
+parser: Shift 'VARIABLE', pending reduce 186
+parser: Return. Stack=[SELECT distinct selcollist from WHERE expr EQ VARIABLE]
+parser: Input 'SEMI' with pending reduce 186
+parser: Reduce 186 [expr ::= VARIABLE], pop back to state 139.
+parser: ... then shift 'expr', go to state 153
+parser: Reduce 200 [expr ::= expr EQ|NE expr], pop back to state 113.
+parser: ... then shift 'expr', go to state 77
+parser: Reduce 154 [where_opt ::= WHERE expr], pop back to state 402.
+parser: ... then shift 'where_opt', go to state 401
+parser: Reduce 144 [groupby_opt ::=].
+parser: ... then shift 'groupby_opt', go to state 400
+parser: Reduce 146 [having_opt ::=].
+parser: ... then shift 'having_opt', go to state 220
+parser: Reduce 134 [orderby_opt ::=].
+parser: ... then shift 'orderby_opt', go to state 399
+parser: Reduce 148 [limit_opt ::=].
+parser: ... then shift 'limit_opt', pending reduce 92
+parser: Reduce 92 [oneselect ::= SELECT distinct selcollist from where_opt groupby_opt having_opt orderby_opt limit_opt], pop back to state 0.
+parser: ... then shift 'oneselect', go to state 296
+parser: Reduce 87 [select ::= selectnowith], pop back to state 0.
+parser: ... then shift 'select', pending reduce 84
+parser: Reduce 84 [cmd ::= select], pop back to state 0.
+parser: ... then shift 'cmd', pending reduce 2
+parser: Reduce 2 [cmdx ::= cmd], pop back to state 0.
+parser: ... then shift 'cmdx', go to state 599
+parser: Shift 'SEMI', pending reduce 352
+parser: Return. Stack=[cmdx SEMI]
+parser: Popping SEMI
+parser: Popping cmdx
+PREPARE rc=0 parameters=1
+
+STDERR

@@ -1,0 +1,18 @@
+SQLite 3.53.4 / 실제 sqlite3GetToken 결과
+offset	bytes	type	lexeme
+0	6	TK_SELECT	SELECT
+6	1	TK_SPACE	 
+7	4	TK_ID	name
+11	1	TK_SPACE	 
+12	4	TK_FROM	FROM
+16	1	TK_SPACE	 
+17	7	TK_ID	student
+24	1	TK_SPACE	 
+25	5	TK_WHERE	WHERE
+30	1	TK_SPACE	 
+31	2	TK_ID	id
+33	1	TK_SPACE	 
+34	1	TK_EQ	=
+35	1	TK_SPACE	 
+36	2	TK_VARIABLE	?1
+38	1	TK_SEMI	;
