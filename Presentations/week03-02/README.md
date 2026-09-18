@@ -1,6 +1,20 @@
 # 3주차 2차시 · 실습과 소스 분석
 
-## 3-tier 학생 관리 CRUD와 애플리케이션 코드 · v04
+## Python으로 이해하는 학생 관리 · v06
+
+[PDF](week3-2-three-tier-lab-v06.pdf) · [편집용 ODP](week3-2-three-tier-lab-v06.odp) · [PPTX](week3-2-three-tier-lab-v06.pptx)
+
+현재 강의용 발표자료입니다. 총 96장으로 Python 기초부터 메모리 CRUD, SQLite, 웹 요청과 논리적 3계층까지 단계별로 설명합니다. 기존 주황색 표지와 파란색 본문·코드 디자인을 유지합니다.
+
+- 변수·출력, dict/list/tuple, 조건문·반복문·함수
+- 메모리 CRUD와 SQLite의 연결·바인딩·조회·수정·삭제
+- 파일 DB의 데이터 보존, 예외와 트랜잭션
+- HTTP/JSON과 실제 학생 등록 코드 추적
+- 오류 발생 계층과 짧은 Python 표현 해설
+
+전체 내용은 두 차시로 나누어 사용할 수 있으며, 90분 수업에서는 기초·CRUD·웹 흐름을 중심으로 선택합니다. 슬라이드에서 참조하는 `beginner/` 단계별 예제와 교수자 지도 스크립트는 별도 자료입니다.
+
+## 이전 발표자료 · v04
 
 [PDF](week3-2-three-tier-lab-v04.pdf) · [편집용 ODP](week3-2-three-tier-lab-v04.odp) · [PPTX](week3-2-three-tier-lab-v04.pptx)
 
