@@ -1,4 +1,4 @@
-# Week 3-2 · 3-tier 학생 관리 실습 v03
+# Week 3-2 · 3-tier 학생 관리 실습 v04
 
 브라우저에서 학생 정보를 등록·조회·수정·삭제하며 화면, 애플리케이션, 데이터 계층의 역할을 확인합니다. 1분반 9/18(금), 2분반 9/17(목)용 90분 실습입니다. 모든 학생 데이터는 가상입니다.
 
@@ -27,21 +27,23 @@ Python 3.10 이상(SQLite 모듈 포함)이 필요합니다. 별도 pip 패키�
 
 이번 실습에서는 Python에 포함된 SQLite를 사용하므로 PC별 버전이 다를 수 있습니다. 별도 Parser 소스 분석 패키지는 SQLite 3.53.4를 고정해서 사용합니다. 두 실행 환경의 내부 함수나 추적 로그가 동일하다고 가정하지 않습니다.
 
+## Python이 처음이라면
+
+[Python 기초](PYTHON_PRIMER.md)를 먼저 읽고 `python3 python_basics.py`를 실행합니다. Windows에서는 `py -3 python_basics.py`입니다. 변수, dict·tuple, 함수, self, 예외, with를 실제 코드와 연결하며 파일 DB를 수정하지 않습니다.
+
 ## 수업 순서 · 90분
 
-실행하면서 애플리케이션 코드를 함께 읽습니다. [CODE_WALKTHROUGH.md](CODE_WALKTHROUGH.md)는 실제 코드 발췌와 상세 해설입니다. 등록 요청 하나를 먼저 끝까지 따라간 뒤 조회·수정·삭제와 비교합니다.
+| 시간 | 활동 |
+|---|---|
+| 0–5분 | 환경 확인과 서버 실행 |
+| 5–30분 | Python 필수 문법과 예제 실행 |
+| 30–45분 | CRUD 실행과 HTTP 관찰 |
+| 45–75분 | 등록 요청을 따라 애플리케이션 코드 읽기 |
+| 75–85분 | 오류·롤백 확인과 코드 설명 |
+| 85–90분 | 확인 문항 제출 |
 
-| 시간 | 활동 | 읽을 코드 |
-|---|---|---|
-| 0–10분 | 실행 환경과 3계층 구조 | make_server |
-| 10–20분 | CRUD 실행과 HTTP 관찰 | 실습지 1·2번 |
-| 20–45분 | 요청 JSON, 경로 처리, 검증 | app.js, server.py, service.py |
-| 45–65분 | SQL·바인딩·트랜잭션·응답 | repository.py, send, render |
-| 65–75분 | 오류 경로 추적 | 예외 처리와 changes=0 |
-| 75–85분 | 접두어 검색으로 코드 수정 | Repository.list의 SQL과 params |
-| 85–90분 | 코드 설명과 수정 결과 제출 | 해설 19번 확인 문제 |
-
-실습 순서는 [WORKSHEET.md](WORKSHEET.md)를 따릅니다. 코드 해설은 폼 이벤트, HTTP/JSON, 서비스 검증, 바인딩, 커밋·롤백·연결 해제, 응답 렌더링을 설명합니다. SQLite 내부 C Parser의 함수와 문법 규칙은 기존 별도 소스 분석 자료에서 다룹니다.
+[CODE_WALKTHROUGH.md](CODE_WALKTHROUGH.md)는 실제 코드 해설,
+[WORKSHEET.md](WORKSHEET.md)는 학생 활동지입니다. 접두어 검색 수정은 수업 후 확장 과제로 제공합니다. SQLite 내부 Parser 분석은 별도 자료로 유지합니다.
 
 ## API 요약
 

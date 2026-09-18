@@ -1,0 +1,44 @@
+1. 변수와 자료형
+2001 O'Brien 12 None
+int str NoneType
+
+2. 문자열 숫자와 정수
+121 13
+학번 2001: 12학점
+
+3. 조건과 들여쓰기
+유효한 학점
+True
+
+4. 딕셔너리와 JSON
+O'Brien 미입력
+{"id": 2001, "name": "O'Brien", "dept_name": null, "tot_cred": 12}
+True
+
+5. 리스트, 튜플, 반복
+2001 O'Brien
+2002 가상학생
+(24, 2001) 24 2001
+tuple int
+
+6. 함수와 return
+True False False
+
+7. 클래스와 self
+학생: 김민지 학생: 이준호
+
+8. 예외 처리
+정수로 바꿀 수 없습니다.
+변환 시도 종료
+
+9. 짧은 문법을 풀어 읽기
+["O'Brien", '가상학생']
+["O'Brien", '가상학생']
+미정
+True True
+
+10. with와 SQLite 바인딩
+("O'Brien",)
+PK 중복: 이번 with 블록의 두 INSERT를 롤백했습니다.
+남은 행 수: 1
+연결 닫힘. 파일 DB는 변경하지 않았습니다.

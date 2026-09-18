@@ -2,6 +2,10 @@
 
 실습 코드와 SQLite 내부 소스 분석 도구를 별도 폴더로 구분합니다.
 
+## Python 기초부터 시작하기
+
+[Python 기초 설명](app/PYTHON_PRIMER.md)을 읽고 app 폴더에서 `python3 python_basics.py`를 실행합니다. 파일 DB를 수정하지 않는 예제입니다. Windows에서는 `py -3 python_basics.py`를 사용합니다.
+
 ## 3-tier 애플리케이션 실습
 
 [실행 안내](app/README.md) · [코드 해설](app/CODE_WALKTHROUGH.md) · [학생 실습지](app/WORKSHEET.md)

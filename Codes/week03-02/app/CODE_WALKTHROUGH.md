@@ -1,6 +1,8 @@
-# 3-tier 예제 코드 해설 · v03
+# 3-tier 예제 코드 해설 · v04
 
 이 해설은 브라우저·Python 서버·SQLite를 연결하는 **애플리케이션 코드**를 설명합니다. SQLite 엔진의 tokenize.c·parse.y 같은 내부 소스 분석은 별도 자료에서 다룹니다.
+
+Python이 처음이라면 [기초 설명](PYTHON_PRIMER.md)과 `python3 python_basics.py`를 먼저 진행하세요. dict·tuple·self·with를 실제 코드와 연결합니다.
 
 ## 먼저 따라갈 한 요청
 
@@ -399,7 +401,7 @@ async function action(work) {
 
 ## 18. 직접 수정하는 연습: 정확한 이름 검색을 접두어 검색으로
 
-필수 실습은 한 곳의 SQL 변경입니다. 원본을 복사하고 `Repository.list()`에서 `WHERE name = ?`를 아래처럼 바꿉니다. 다른 계층의 함수 이름과 API 경로는 그대로 사용합니다.
+수업 후 선택 확장 과제는 한 곳의 SQL 변경입니다. 원본을 복사하고 `Repository.list()`에서 `WHERE name = ?`를 아래처럼 바꿉니다. 다른 계층의 함수 이름과 API 경로는 그대로 사용합니다.
 
 ```python
 WHERE substr(name, 1, length(?)) = ?
@@ -423,4 +425,4 @@ WHERE substr(name, 1, length(?)) = ?
 6. SQL 바인딩과 textContent는 각각 어느 경계에서 입력값을 다루나요?
 7. UPDATE의 params가 (24, 2001)인 이유를 ? 순서와 연결하세요.
 
-제출: 기존 실습지에 위 문제 중 1·2·4·5·7의 답, 접두어 검색 변경 코드, 예상 결과와 실제 결과를 추가합니다.
+제출: 기존 실습지에 위 문제 중 1·2·4·5·7의 답, 접두어 검색을 선택한 경우 변경 코드와 실행 결과를 추가합니다.
