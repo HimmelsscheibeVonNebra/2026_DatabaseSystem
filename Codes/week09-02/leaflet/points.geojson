@@ -1,0 +1,265 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.3857206,
+     37.5492073
+    ]
+   },
+   "properties": {
+    "name": "烟台港客运站"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     124.8480556,
+     38.0027778
+    ]
+   },
+   "properties": {
+    "name": "NLL 10"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     124.1573386,
+     39.8204799
+    ]
+   },
+   "properties": {
+    "name": "丹东港客运码头"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9803174,
+     38.1973623
+    ]
+   },
+   "properties": {
+    "name": "어젓산리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.97376,
+     38.17998
+    ]
+   },
+   "properties": {
+    "name": "적음리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9738,
+     38.15732
+    ]
+   },
+   "properties": {
+    "name": "진곡리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9802514,
+     38.1511008
+    ]
+   },
+   "properties": {
+    "name": "중사리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9862995,
+     38.1166262
+    ]
+   },
+   "properties": {
+    "name": "횡산리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9746746,
+     38.1228744
+    ]
+   },
+   "properties": {
+    "name": "횡산리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.94483,
+     38.12406
+    ]
+   },
+   "properties": {
+    "name": "고잔하리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9594362,
+     38.0941509
+    ]
+   },
+   "properties": {
+    "name": "강서리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9963841,
+     38.0899076
+    ]
+   },
+   "properties": {
+    "name": "북삼리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9885715,
+     38.0722769
+    ]
+   },
+   "properties": {
+    "name": "갈울"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9885762,
+     38.0720342
+    ]
+   },
+   "properties": {
+    "name": "갈울"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9993269,
+     38.0732304
+    ]
+   },
+   "properties": {
+    "name": "무등리삼거리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9995911,
+     38.0733745
+    ]
+   },
+   "properties": {
+    "name": "무등리삼거리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9872509,
+     38.0699684
+    ]
+   },
+   "properties": {
+    "name": "노동리입구"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9871479,
+     38.0698103
+    ]
+   },
+   "properties": {
+    "name": "노동리입구"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9819498,
+     38.0688817
+    ]
+   },
+   "properties": {
+    "name": "노동리"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.97048,
+     38.06499
+    ]
+   },
+   "properties": {
+    "name": "두리산"
+   }
+  }
+ ]
+}
